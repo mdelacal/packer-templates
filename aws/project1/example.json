@@ -1,0 +1,11 @@
+{
+	"builders": [
+		{
+			"type": "amazon-ebs",
+			"ami_name": "Packer-AWS-Test-Image",
+			"source_ami": "ami-0c2b8ca1dad447f8a",
+			"instance_type": "t2.micro",
+			"ssh_username": "ec2-user"
+		}
+	]
+}

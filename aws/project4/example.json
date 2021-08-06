@@ -1,0 +1,26 @@
+{
+	"builders": [
+		{
+			"type": "amazon-ebs",
+			"ami_name": "Packer-AWS-Ubuntu-Nginx-Image-Script-File",
+			"source_ami": "ami-0747bdcabd34c712a",
+			"instance_type": "t2.micro",
+			"ssh_username": "ubuntu"
+		}
+	],
+	"provisioners": [
+		{
+			"type": "shell",
+			"script": "setup.sh"
+		},
+		{
+			"type": "file",
+			"source": "index.html",
+			"destination" : "/tmp/"
+		},
+		{
+			"type": "shell",
+			"inline": ["sudo cp /tmp/index.html /var/www/html/"]
+		}
+	]
+}
