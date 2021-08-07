@@ -1,19 +1,29 @@
 ## Packer
 
-#### Build
+### Build
 ```
 $ packer build example.json
 ```
 
-#### Validate
+#### Build with variables file
+```
+$ packer build -var-file=variables.json example.json 
+```
+
+#### Build with variables in command line
+```
+$ packer build -var="<variable>=<value>" [-var="<variable2>=<value2>"] example.json 
+```
+
+### Validate
 ```
 $ packer validate example.json
 ```
 
-#### Inspect
+### Inspect
 ```
 $ packer inspect example.json
 ```
 
-#### References:
-- https://www.youtube.com/playlist?list=PL8VzFQ8k4U1Jp6eWgHSXHiiRWRvPyCKRj
+## References:
+- Packer mini course playlist: https://www.youtube.com/playlist?list=PL8VzFQ8k4U1Jp6eWgHSXHiiRWRvPyCKRj

@@ -1,0 +1,20 @@
+{
+    "builders": [
+        {
+            "type": "azure-rm",
+            "client_secret": "XXX",
+            "client_id": "YYY",
+            "subscription_id": "ZZZ",
+
+            "image_publisher": "Canonical",
+            "image_offer": "UbuntuServer",
+            "image_sku": "18.04-LTS",
+
+            "location": "East-US",
+            "os_type": "Linux",
+            "managed_image_name": "Ubuntu-nginx-project5",
+            "managed_image_resource_group_name": "packer-rg"
+        }
+    ]
+
+}

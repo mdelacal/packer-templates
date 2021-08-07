@@ -1,0 +1,22 @@
+{
+	"variables": {
+		"description": "{{env `AMI_DESCRIPTION`}}",
+		"version": "{{env `AMI_VERSION`}}"
+	},
+	"builders": [
+		{
+			"type": "amazon-ebs",
+			"ami_name": "{{user `description`}}-{{user `version`}}",
+			"source_ami": "ami-0747bdcabd34c712a",
+			"instance_type": "t2.micro",
+			"ssh_username": "ubuntu"
+		}
+	],
+	"provisioners": [
+		{
+			"type": "shell",
+			"inline": ["sleep 30", "sudo apt update", "sudo apt install nginx -y"]
+		}
+	],
+	"sensitive-variables": ["description", "version"]
+}
